@@ -1,21 +1,25 @@
-# Handles CRUD actions for movies
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
 
+  # GET /movies or /movies.json
   def index
     @movies = Movie.all
   end
 
+  # GET /movies/1 or /movies/1.json
   def show
   end
 
+  # GET /movies/new
   def new
     @movie = Movie.new
   end
 
+  # GET /movies/1/edit
   def edit
   end
 
+  # POST /movies or /movies.json
   def create
     @movie = Movie.new(movie_params)
 
@@ -30,6 +34,7 @@ class MoviesController < ApplicationController
     end
   end
 
+  # PATCH/PUT /movies/1 or /movies/1.json
   def update
     respond_to do |format|
       if @movie.update(movie_params)
@@ -42,6 +47,7 @@ class MoviesController < ApplicationController
     end
   end
 
+  # DELETE /movies/1 or /movies/1.json
   def destroy
     @movie.destroy!
 
