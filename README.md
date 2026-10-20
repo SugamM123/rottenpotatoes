@@ -7,7 +7,8 @@ Heroku app url: https://rottenpotatoes-sugam-5f8c7210c73c.herokuapp.com/
 ## Tech details
 - Ruby version: 3.4.7
 - Rails version: 8.1.4
-- Database: PostgreSQL for dev and Heroku production
+- Database: SQLite3 for dev, PostgreSQL for Heroku production
+
 
 ## Setup & Running locally
 
