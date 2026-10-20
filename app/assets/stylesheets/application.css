@@ -185,3 +185,157 @@ main {
   border-radius: 4px;
   margin-bottom: 12px;
 }
+
+.movies-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.movies-table th {
+  background-color: #f1f3f5;
+  font-weight: bold;
+}
+
+.movies-table th a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.movies-table th a:hover {
+  color: #8b4513;
+}
+
+/* Highlight sorted column */
+.movies-table th.sorted-asc {
+  background-color: #d4edda;
+}
+
+.movies-table th.sorted-desc {
+  background-color: #f8d7da;
+}
+
+.movies-table tbody tr:nth-child(even) {
+  background-color: #fafbfc;
+}
+
+.movies-table tbody tr:hover {
+  background-color: #fff8e7;
+}
+
+.movies-table tfoot td {
+  padding-top: 15px;
+  border-bottom: none;
+  color: #666;
+}
+
+.align-right {
+  text-align: right;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid #ced4da;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.btn:hover {
+  background-color: #e2e6ea;
+  color: #333;
+}
+
+.btn-primary {
+  background-color: #8b4513;
+  border-color: #8b4513;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #6d360f;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #bd2130;
+  color: white;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.actions form {
+  display: inline;
+  margin: 0;
+}
+
+/* Movie show details */
+.movie-details p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* Form inputs */
+.field {
+  margin-bottom: 14px;
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.field input[type="text"],
+.field input[type="date"],
+.field textarea {
+  width: 100%;
+  max-width: 420px;
+  padding: 7px 9px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #8b4513;
+}
+
+/* Flash alerts */
+.flash-notice {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+  padding: 30px 0;
+}
