@@ -1,10 +1,187 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+/* styles for rottenpotatoes */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  margin: 0;
+}
+
+a {
+  color: #8a4b08;
+}
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* header and footer */
+.site-header {
+  background-color: #8a4b08;
+  padding: 12px 0;
+}
+
+.site-header a {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.site-footer {
+  text-align: center;
+  color: #777;
+  font-size: 13px;
+  padding: 20px 0;
+}
+
+main {
+  padding: 20px 0;
+}
+
+/* white box around page content */
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.flash-notice {
+  background-color: #dff0d8;
+  border: 1px solid #b2d8a4;
+  color: #2d5a1f;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* buttons */
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background-color: #eee;
+  color: #222;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn-primary {
+  background-color: #8a4b08;
+  border-color: #8a4b08;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #6d3b06;
+}
+
+.btn-danger {
+  background-color: #c9302c;
+  border-color: #c9302c;
+  color: white;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.actions form {
+  display: inline;
+}
+
+/* movies table */
+.movies-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.movies-table th,
+.movies-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.movies-table th {
+  background-color: #eee;
+}
+
+.movies-table th a {
+  color: #222;
+  text-decoration: none;
+}
+
+/* sorted column gets a different color for asc vs desc */
+.movies-table th.sorted-asc {
+  background-color: #cde8c4;
+}
+
+.movies-table th.sorted-desc {
+  background-color: #f3d1c4;
+}
+
+.movies-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.movies-table tbody tr:hover {
+  background-color: #fff3e0;
+}
+
+.movies-table tfoot td {
+  border-bottom: none;
+  color: #555;
+}
+
+.align-right {
+  text-align: right !important;
+}
+
+/* show page */
+.details dt {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.details dd {
+  margin-left: 0;
+}
+
+/* forms */
+.field {
+  margin-bottom: 12px;
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 6px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-errors {
+  color: #a94442;
+  background-color: #f2dede;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
