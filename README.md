@@ -1,24 +1,38 @@
-# README
+# RottenPotatoes - CSCE 606 (hw-hello-rails)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the RottenPotatoes rails app for hw-hello-rails in CSCE 606.
 
-Things you may want to cover:
+Heroku app url: https://rottenpotatoes-sugam-5f8c7210c73c.herokuapp.com/
 
-* Ruby version
+## Tech details
+- Ruby version: 3.4.7
+- Rails version: 8.1.4
+- Database: SQLite3 for development/test, PostgreSQL for Heroku production
 
-* System dependencies
+## Setup & Running locally
 
-* Configuration
+1. Install dependencies:
+```bash
+bundle install
+```
 
-* Database creation
+2. Setup database and seed movies:
+```bash
+bin/rails db:migrate
+bin/rails db:seed
+```
 
-* Database initialization
+3. Start server:
+```bash
+bin/rails server
+```
+Then go to `http://localhost:3000` (it redirects `/` to `/movies`).
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Features implemented
+- Movies model with migration and starter seed data.
+- Full CRUD routes and views using scaffold controller.
+- Sortable movie table by Title, Rating, and Release Date.
+  - Clicking on a header toggles between ascending and descending sort.
+  - Sorted column is highlighted and shows an arrow indicator.
+  - Last chosen sort is remembered in session so it stays when coming back.
+- Deployed on Heroku with postgres add-on.
