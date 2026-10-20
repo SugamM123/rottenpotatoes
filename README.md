@@ -28,6 +28,26 @@ bin/rails server
 ```
 Then go to `http://localhost:3000` (it redirects `/` to `/movies`).
 
+## Commands Used to Generate Project Files
+
+1. **Initial Rails app generation**:
+```bash
+rails new rottenpotatoes
+```
+bawe Rails directory structure and boilerplate (`app/`, `config/`, `db/`, `lib/`, `vendor/`, `storage/`, etc.).
+
+2. **Movies migration**:
+```bash
+bin/rails generate migration create_movies
+```
+migration file in `db/migrate/` for creating the `movies` table schema.
+
+3. **Movies controller and views**:
+```bash
+bin/rails generate scaffold_controller Movie title rating description release_date --skip-test
+```
+ controller (`app/controllers/movies_controller.rb`), views (`app/views/movies/`), and helper (`app/helpers/movies_helper.rb`) for the existing `Movie` model.
+
 ## Features implemented
 - Movies model with migration and starter seed data.
 - Full CRUD routes and views using scaffold controller.
