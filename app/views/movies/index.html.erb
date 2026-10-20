@@ -1,16 +1,30 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "All Movies" %>
 
-<% content_for :title, "Movies" %>
+<section class="card">
+  <h1>All Movies</h1>
 
-<h1>Movies</h1>
-
-<div id="movies">
-  <% @movies.each do |movie| %>
-    <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New movie", new_movie_path %>
+  <table class="movies-table">
+    <thead>
+      <tr>
+        <%= sort_header "Title", "title" %>
+        <%= sort_header "Rating", "rating" %>
+        <%= sort_header "Release Date", "release_date" %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @movies.each do |movie| %>
+        <tr id="<%= dom_id movie %>">
+          <td><%= link_to movie.title, movie %></td>
+          <td><%= movie.rating %></td>
+          <td><%= release_date_for(movie) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2"><%= pluralize(@movies.size, "movie") %></td>
+        <td class="align-right"><%= link_to "Add new movie", new_movie_path, class: "btn btn-primary" %></td>
+      </tr>
+    </tfoot>
+  </table>
+</section>

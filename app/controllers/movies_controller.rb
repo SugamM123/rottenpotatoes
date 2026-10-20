@@ -1,9 +1,18 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
 
+  SORT_COLUMNS = %w[title rating release_date].freeze
+
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
+    # use sort from the url if it's valid, otherwise use the last one saved in session
+    # (only allowed column names get passed to order, so no sql injection)
+    @sort = SORT_COLUMNS.include?(params[:sort]) ? params[:sort] : session[:sort]
+    @direction = %w[asc desc].include?(params[:direction]) ? params[:direction] : session[:direction] || "asc"
+    session[:sort] = @sort
+    session[:direction] = @direction
+
+    @movies = @sort ? Movie.order(@sort => @direction) : Movie.all
   end
 
   # GET /movies/1 or /movies/1.json

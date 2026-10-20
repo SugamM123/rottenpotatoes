@@ -3,6 +3,7 @@
   <head>
     <title><%= content_for(:title) || "Rottenpotatoes" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="RottenPotatoes: browse, sort, and add movies.">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Rottenpotatoes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -24,6 +25,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="site-header">
+      <div class="container">
+        <%= link_to "RottenPotatoes", movies_path %>
+      </div>
+    </header>
+
+    <main class="container">
+      <% if notice.present? %>
+        <p class="flash-notice" role="status"><%= notice %></p>
+      <% end %>
+      <%= yield %>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">CSCE 606 - hw-hello-rails</div>
+    </footer>
   </body>
 </html>
